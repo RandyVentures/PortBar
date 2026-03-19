@@ -34,3 +34,5 @@ Carthage/Build/
 # Build artifacts
 *.app
 *.zip
+build/
+dist/
