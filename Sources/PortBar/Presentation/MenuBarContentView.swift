@@ -285,11 +285,15 @@ struct MenuBarContentView: View {
     }
 
     private var ownedPorts: [ListeningPort] {
-        viewModel.filteredPorts.filter(isOwnedByCurrentUser)
+        viewModel.filteredPorts.filter { port in
+            isOwnedByCurrentUser(port)
+        }
     }
 
     private var reviewPorts: [ListeningPort] {
-        viewModel.filteredPorts.filter { !isOwnedByCurrentUser($0) }
+        viewModel.filteredPorts.filter { port in
+            !isOwnedByCurrentUser(port)
+        }
     }
 
     private var visiblePortCount: Int {
