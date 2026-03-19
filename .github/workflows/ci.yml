@@ -20,5 +20,4 @@ jobs:
           xcode-version: latest-stable
 
       - name: Run tests
-        working-directory: PortBar
         run: swift test
