@@ -37,7 +37,27 @@ Add screenshots once the visual polish is finalized:
 - stop confirmation flow
 - expanded process details
 
-## Quick Start
+## Install
+
+### Option 1: Download from GitHub Releases
+
+Best for normal users.
+
+1. Open the repo's Releases page.
+2. Download the latest `PortBar-<version>-macOS.zip`.
+3. Unzip the archive.
+4. Drag `PortBar.app` into `/Applications`.
+5. Launch `PortBar.app`.
+
+If macOS blocks the app because it is unsigned or not notarized yet, run:
+
+```bash
+xattr -dr com.apple.quarantine /Applications/PortBar.app
+```
+
+### Option 2: Build from Source
+
+Best for contributors.
 
 ### Requirements
 
@@ -76,6 +96,24 @@ build/DerivedData/Build/Products/Debug/PortBar.app
 ```bash
 swift test
 ```
+
+## Release Packaging
+
+PortBar currently publishes GitHub Release app zips rather than Homebrew packages.
+
+Build a release app bundle:
+
+```bash
+./scripts/build_release.sh
+```
+
+Package a release zip:
+
+```bash
+./scripts/package_release.sh v0.1.0
+```
+
+For the full release workflow, see [`docs/RELEASE.md`](docs/RELEASE.md).
 
 ## Architecture
 
@@ -175,5 +213,6 @@ Current follow-up areas:
 - more tests around UI/view-model behavior
 - broader runtime QA on real macOS machines
 - clearer identification for opaque system daemons
+- signed and notarized release distribution
 
 For the implementation roadmap, see [`PLAN.md`](PLAN.md).
