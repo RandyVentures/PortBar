@@ -6,6 +6,8 @@ PortBar is a native macOS menu bar app for developers who need to answer one que
 
 PortBar focuses on local TCP listeners instead of trying to be a full process monitor. It prioritizes the processes you are most likely to care about, keeps risky system and background listeners behind an explicit review step, and stays lightweight enough to leave running.
 
+![PortBar screenshot](docs/images/portbar-screenshot.png)
+
 ## Features
 
 - Native macOS menu bar app built for macOS 14+
