@@ -113,6 +113,12 @@ Package a release zip:
 ./scripts/package_release.sh v0.1.0
 ```
 
+Once you have a `Developer ID Application` certificate and a configured notarytool profile, create a notarized release:
+
+```bash
+./scripts/notarize_release.sh v0.1.0
+```
+
 For the full release workflow, see [`docs/RELEASE.md`](docs/RELEASE.md).
 
 ## Architecture
